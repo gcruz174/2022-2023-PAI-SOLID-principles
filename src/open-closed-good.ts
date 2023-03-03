@@ -3,7 +3,7 @@ interface ShapeInterface {
 }
 
 class Square implements ShapeInterface {
-  public length: number;
+  private length: number;
 
   constructor(length: number) {
     this.length = length;
@@ -15,7 +15,7 @@ class Square implements ShapeInterface {
 }
 
 class Circle implements ShapeInterface {
-  public radius: number;
+  private radius: number;
 
   constructor(radius: number) {
     this.radius = radius;
