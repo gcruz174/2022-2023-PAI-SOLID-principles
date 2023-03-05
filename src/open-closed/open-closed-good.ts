@@ -45,6 +45,9 @@ class Circle implements Shape {
   }
 }
 
+/**
+ * @desc Calculates the area of a set of shapes
+ */
 class AreaCalculator {
   constructor(private shapes: Shape[]) {}
 

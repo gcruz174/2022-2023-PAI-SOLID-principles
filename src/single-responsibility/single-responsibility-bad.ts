@@ -13,6 +13,10 @@
  *
  */
 
+/**
+ * @desc Represents a user.
+ * It can also save and retrieve users from a database.
+ */
 class User {
   constructor(private name: string, private email: string) { }
 

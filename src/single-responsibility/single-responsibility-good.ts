@@ -8,28 +8,29 @@
  * @author G. Jonay Vera Estévez
  * @since Mar 06, 2023
  * @desc Good example of single responsibility principle
- * 
+ *
  * @see {@link https://wikipedia.org/wiki/Single_responsibility_principle}
  *
  */
 
-interface UserData {
-  name: string;
-  email: string;
-}
-
+/**
+ * @desc Represents a user.
+ */
 class User {
-  constructor(private userData: UserData) { }
+  constructor(private name: string, private email: string) {}
 
   public getName(): string {
-    return this.userData.name;
+    return this.name;
   }
 
   public getEmail(): string {
-    return this.userData.email;
+    return this.email;
   }
 }
 
+/**
+ * @desc Manages users, allowing to add and retrieve them.
+ */
 class UserManager {
   private users: User[];
 
@@ -37,12 +38,12 @@ class UserManager {
     this.users = [];
   }
 
-  public addUser(userData: UserData): void {
-    const user = new User(userData);
+  public addUser(name: string, email: string): void {
+    const user = new User(name, email);
     this.users.push(user);
   }
 
-  public getUserByEmail(email: string): User|undefined {
-    return this.users.find(user => user.getEmail() === email);
+  public getUserByEmail(email: string): User | undefined {
+    return this.users.find((user) => user.getEmail() === email);
   }
 }
